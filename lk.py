@@ -4,14 +4,15 @@ img1 = cv2.imread('/home/pavel/mai/res/i1.jpeg',0)
 
 f = 2.4
 
-feature_params = dict( maxCorners = 100,
-                       qualityLevel = 0.4,
-                       minDistance = 5,
-                       blockSize = 15 )
 
-lk_params = dict( winSize  = (15,15),
-                  maxLevel = 4,
-                  criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))
+feature_params = dict( maxCorners = 100,
+                       qualityLevel = 0.8,#вероятность вычисления верного перемещения пикселей, при увеличении числа до 1 точность повышаается
+                       minDistance = 5,
+                       blockSize = 6 )#максимальная точность при 6( вектора смещения равны 66.05408 -65.8587 в пикселях)
+
+lk_params = dict( winSize  = (25,25),
+                  maxLevel = 10,#при увеличении числа, повышается точость вычисления перемещения
+                  criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.05))
 
 color = np.random.randint(0,255,(100,3))
 
