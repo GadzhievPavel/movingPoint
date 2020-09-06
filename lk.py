@@ -39,7 +39,7 @@ print(np.median(x),np.median(y))
 ###koeff
 kX=0.3/np.median(x)
 kY=0.3/np.median(y)
-
+print("Коэффициенты подобия ", kX,kY)
 cv2.imshow('frame',img)
 cv2.imwrite("save.jpg",img)
 img1 = img2
